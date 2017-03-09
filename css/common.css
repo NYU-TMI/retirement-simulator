@@ -1,0 +1,44 @@
+.table tbody > tr > td {
+  vertical-align: middle;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.chart {
+  margin-bottom: 20px;
+}
+
+.clear {
+  clear: both;
+}
+
+.footer {
+  height: 40px;
+}
+
+.blue {
+  color: blue;
+}
+
+.black {
+  color: black;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.fake-link {
+  color: #0645AD;
+  cursor: pointer;
+}

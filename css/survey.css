@@ -1,0 +1,49 @@
+body {
+  padding: 5% 5%;
+  background-color: #AAAAAA;
+}
+
+.row {
+  width: 90%;
+  margin: auto;
+}
+
+.container {
+  background-color: white;
+}
+
+.title {
+  margin-top: 50px;
+}
+
+.main {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eee;
+}
+
+.question {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.desc {
+  padding-bottom: 10px;
+}
+
+.beginning-section {
+  border-bottom: 2px solid #eee;
+}
+
+input[type="radio"], TEXTAREA {
+  margin: 10px 10px 0 10px;
+}
+
+.question-section {
+  margin-top: 30px;
+}
+
+.submit-section {
+  margin: 20px 0px 30px 10px;
+}
+

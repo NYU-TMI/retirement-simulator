@@ -1,0 +1,72 @@
+.select-option {
+  width: 280px;
+  list-style: none;
+  display: inline-block;
+}
+
+.option-block {
+  display: inline-block;
+}
+
+.block-padding {
+  padding-left: 30px;
+}
+
+.modal-title {
+  padding-bottom: 10px;
+}
+
+.inner-option {
+  background-color: #7d7161;
+  display: inline-block;
+}
+
+.inner-option:hover {
+  background-color: #5D5347;
+}
+
+.second-option: {
+  margin: 10px;
+}
+
+.option-list {
+  padding: 0;
+  margin: 0;
+}
+
+.option-card {
+  padding: 25px;
+  color: white;
+  margin: 20px;
+  height: 150px;
+  font-size: 14px;
+}
+
+.option-card > p {
+  font-size: 24px;
+  padding-top: 15px;
+}
+
+.option-details {
+  font-size: 18px;
+}
+
+.options {
+  margin-top: 50px;
+}
+
+.option-container {
+  margin-top: 25px;
+}
+
+.modal-dialog {
+  width: 80%;
+}
+
+.chart {
+ margin-bottom: 20px;
+}
+
+.all-transactions {
+  cursor: pointer;
+}

@@ -1,0 +1,396 @@
+.pieChart{width:309px;min-height:110px;position:relative}
+.pieChart .noDataMessage{color:red;font-weight:bold;position:absolute;top:45px;left:10px}
+.pieChartCanvas{top:5px;position:absolute}
+.pieChartKey{border-collapse:separate;border-spacing:10px 7px;font:12px/12px arial,sans-serif;margin:-7px 0 0 105px}
+.pieChartKey .color{width:12px}
+.pieChartKey .borderColor{border:1px solid #e5e5e5;width:10px}
+.pieChartKey .percent{text-align:right;font-weight:bold}
+.layer-cs{display:none}
+.hidden{display:none;visibility:hidden}
+.ui-dialog{position:absolute;background:white}
+.oldGen.dialog{visibility:hidden;display:none;height:0;top:-1000px;left:-1000px;position:absolute}
+.oldGen .ui-dialog-content{height:auto;top:0;left:0}
+.oldGen .ui-dialog-titlebar{padding:18px 24px 0 18px;min-height:18px}
+.oldGen span.ui-dialog-title{font:16px arial,sans-serif;color:#333;position:absolute;top:18px;left:18px}
+.oldGen+.ui-widget-overlay{background:#CCC;opacity:.5;filter:alpha(opacity = 50);position:absolute;top:0;left:0;width:100%}
+.oldGen.ui-dialog .ui-widget-header{background:0}
+.oldGen .bottomButtons{padding:27px 10px 18px 10px}
+.oldGen .ui-resizable-handle{background:white;position:absolute;font-size:.1px;display:block}
+.oldGen .ui-resizable-disabled .ui-resizable-handle,.ui-resizable-autohide .ui-resizable-handle{display:none}
+.oldGen .ui-resizable-n{border-top:1px solid black;height:5px;cursor:n-resize;width:100%;top:0;left:0;height:5px}
+.oldGen .ui-resizable-s{border-bottom:1px solid black;height:5px;cursor:s-resize;width:100%;bottom:-5px;left:0}
+.oldGen .ui-resizable-e{border-right:1px solid black;width:5px;cursor:e-resize;right:-5px;top:0;height:100%}
+.oldGen .ui-resizable-w{border-left:1px solid black;width:5px;cursor:w-resize;left:-5px;top:0;height:100%}
+.oldGen .ui-resizable-se{border-bottom:1px solid black;border-right:1px solid black;cursor:se-resize;width:5px;height:5px;right:-5px;bottom:-5px}
+.oldGen .ui-resizable-sw{border-left:1px solid black;border-bottom:1px solid black;cursor:sw-resize;width:5px;height:5px;left:-5px;bottom:-5px}
+.oldGen .ui-resizable-nw{border-left:1px solid black;border-top:1px solid black;cursor:nw-resize;width:5px;height:5px;left:-5px;top:0}
+.oldGen .ui-resizable-ne{border-top:1px solid black;border-right:1px solid black;cursor:ne-resize;width:5px;height:5px;right:-5px;top:0}
+.oldGen .ui-selectable-helper{position:absolute;z-index:100;border:1px dotted black}
+.oldGen.ui-dialog .ui-dialog-titlebar{position:relative;background:0}
+.oldGen.ui-dialog .ui-dialog-title{float:left}
+.oldGen.ui-dialog .ui-dialog-titlebar-close{position:absolute;right:0;top:5px;margin:0;padding:1px;height:18px}
+.oldGen.ui-draggable .ui-dialog-titlebar-close{position:absolute;right:-10%;top:-5px;margin:0;padding:1px;height:18px}
+.oldGen.ui-dialog .ui-dialog-content{position:relative;border:0;background:0;overflow:auto;padding:8px}
+.oldGen.ui-dialog .ui-dialog-buttonpane{text-align:left;border-width:1px 0 0 0;background-image:none;margin:.5em 0 0 0;padding:.3em 1em .5em .4em}
+.oldGen.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset{float:right}
+.oldGen.ui-dialog .ui-dialog-buttonpane button{margin:.5em .4em .5em 0;cursor:pointer}
+.oldGen.ui-draggable .ui-dialog-titlebar{cursor:move;width:80%;margin:8px 10% 10px 10%;height:2px;min-height:0;border-bottom:#ccc 2px solid;border-top:#ccc 2px solid;padding:0;border-bottom:#ccc 2px solid}
+.oldGen .closeButton{width:14px;height:18px;display:block;overflow:hidden}
+.nextGen .layerContent{padding-bottom:8px}
+.nextGen.dialog{visibility:hidden;height:0}
+.nextGen.nonResizable{border:12px solid #666}
+.nextGen .closeButton{margin-top:0;width:18px;height:18px;display:block;position:relative;float:right;overflow:hidden}
+.nextGen .closeButton img{border:0}
+.nextGen .ui-dialog-titlebar{padding:12px 24px 8px 18px;height:30px}
+.layerContentClass .nextGen .ui-dialog-titlebar{padding:0 24px 0 18px;min-height:18px}
+.nextGen span.ui-dialog-title{font:16px arial,sans-serif;color:#333;position:absolute;top:18px;left:18px}
+.nextGen+.ui-widget-overlay{background:#000;opacity:.2;filter:alpha(opacity=20);position:absolute;top:0;left:0;width:100%}
+.nextGen .bottomButtons{padding:27px 10px 18px 10px}
+.nextGen .ui-resizable-handle{background:#666;position:absolute;font-size:.1px;display:block}
+.nextGen .ui-resizable-disabled .ui-resizable-handle,.ui-resizable-autohide .ui-resizable-handle{display:none}
+.nextGen .ui-resizable-n{height:6px;cursor:n-resize;width:100%;top:0;left:0}
+.nextGen .ui-resizable-s{height:6px;cursor:s-resize;width:100%;bottom:-6px;left:0}
+.nextGen .ui-resizable-e{width:6px;cursor:e-resize;right:-6px;top:0;height:100%}
+.nextGen .ui-resizable-w{width:6px;cursor:w-resize;left:-6px;top:0;height:100%}
+.nextGen .ui-resizable-se{cursor:se-resize;width:6px;height:6px;right:-6px;bottom:-6px}
+.nextGen .ui-resizable-sw{cursor:sw-resize;width:6px;height:6px;left:-6px;bottom:-6px}
+.nextGen .ui-resizable-nw{cursor:nw-resize;width:6px;height:6px;left:-6px;top:0}
+.nextGen .ui-resizable-ne{cursor:ne-resize;width:6px;height:6px;right:-6px;top:0}
+.nextGen .ui-selectable-helper{position:absolute;z-index:100;border:1px dotted black}
+.nextGen.ui-dialog .ui-dialog-titlebar{position:relative;background:0}
+.nextGen.ui-dialog .ui-dialog-title{float:left;padding-top:10px}
+.nextGen.ui-dialog .ui-dialog-titlebar-close{position:absolute;right:6px;top:12px;width:19px;margin:0;padding:1px;height:18px}
+.nextGen .ui-dialog-content{position:relative;border:0;background:0;overflow:auto;zoom:1;padding:8px 18px}
+.nextGen .ui-dialog-buttonpane{text-align:left;border-width:1px 0 0 0;background-image:none;margin:.5em 0 0 0;padding:.3em 1em .5em .4em}
+.nextGen .ui-dialog-buttonpane .ui-dialog-buttonset{float:right}
+.nextGen .ui-dialog-buttonpane button{margin:.5em .4em .5em 0;cursor:pointer}
+.nextGen.ui-draggable .ui-dialog-titlebar{cursor:move;margin:0;width:100%;background:#e0dbd0;height:45px;border:0;padding:18px 0 0 0}
+.mvtGen .layerContent{padding-bottom:8px;margin-top:-8px}
+.mvtGen.dialog{visibility:hidden;height:0}
+.mvtGen .closeButton{margin-top:0;width:18px;height:18px;display:block;position:relative;float:right;overflow:hidden}
+.mvtGen .ui-dialog-titlebar{padding:18px 24px 0 18px;height:30px}
+.layerContentClass .mvtGen .ui-dialog-titlebar{padding:0 24px 0 18px;min-height:18px}
+.mvtGen span.ui-dialog-title{font:16px arial,sans-serif;color:#333;position:absolute;top:18px;left:18px}
+.mvtGen+.ui-widget-overlay{background:#000;opacity:.2;filter:alpha(opacity=20);position:absolute;top:0;left:0;width:100%}
+.mvtGen .bottomButtons{padding:27px 10px 18px 10px}
+.mvtGen .ui-resizable-handle{background:#666;position:absolute;font-size:.1px;display:block}
+.mvtGen .ui-resizable-disabled .ui-resizable-handle,.ui-resizable-autohide .ui-resizable-handle{display:none}
+.mvtGen .ui-resizable-n{height:6px;cursor:n-resize;width:100%;top:0;left:0}
+.mvtGen .ui-resizable-s{height:6px;cursor:s-resize;width:100%;bottom:-6px;left:0}
+.mvtGen .ui-resizable-e{width:6px;cursor:e-resize;right:-6px;top:0;height:100%}
+.mvtGen .ui-resizable-w{width:6px;cursor:w-resize;left:-6px;top:0;height:100%}
+.mvtGen .ui-resizable-se{cursor:se-resize;width:6px;height:6px;right:-6px;bottom:-6px}
+.mvtGen .ui-resizable-sw{cursor:sw-resize;width:6px;height:6px;left:-6px;bottom:-6px}
+.mvtGen .ui-resizable-nw{cursor:nw-resize;width:6px;height:6px;left:-6px;top:0}
+.mvtGen .ui-resizable-ne{cursor:ne-resize;width:6px;height:6px;right:-6px;top:0}
+.mvtGen .ui-selectable-helper{position:absolute;z-index:100;border:1px dotted black}
+.mvtGen.ui-dialog .ui-dialog-titlebar{position:relative;background:0}
+.mvtGen.ui-dialog .ui-dialog-title{float:left;padding-top:10px}
+.mvtGen.ui-dialog .ui-dialog-titlebar-close{position:absolute;right:6px;top:12px;width:19px;margin:0;padding:1px;height:18px}
+.mvtGen .ui-dialog-content{position:relative;border:0;background:0;overflow:auto;zoom:1;padding:8px 18px}
+.mvtGen .ui-dialog-buttonpane{text-align:left;border-width:1px 0 0 0;background-image:none;margin:.5em 0 0 0;padding:.3em 1em .5em .4em}
+.mvtGen .ui-dialog-buttonpane .ui-dialog-buttonset{float:right}
+.mvtGen .ui-dialog-buttonpane button{margin:.5em .4em .5em 0;cursor:pointer}
+.mvtGen.ui-draggable .ui-dialog-titlebar{cursor:move;margin:0;width:100%;background:#e0dbd0;height:4px;border:0;padding:10px 0 0 0}
+.mvtGen.ui-draggable .ui-dialog-content{margin-top:18px}
+em{display:inline}
+.main{float:none;width:966px;margin:0 auto;background-color:white;height:auto;overflow:hidden;padding:18px;font-size:14px}
+.mainWithGrid{background:url(../../images/gridtesting.png) repeat-y}
+.innerContentPanel{float:left;width:638px;height:100%;padding-right:82px}
+.banner{position:relative;z-index:0;height:155px}
+.banner .overviewSummary{width:400px}
+.bannerImg{position:absolute;top:20px;left:0;z-index:-1;height:135px;width:651px}
+.fundTypeImg{position:absolute;top:35px;left:430px;height:160px;width:160px}
+.infoIconDiv{position:absolute;top:55px;left:550px;height:24px;width:24px}
+.infoIcon{position:relative;height:24px;width:24px}
+.topSection{width:555px;padding-bottom:30px}
+.topSection h2.option3{margin-top:40px;margin-bottom:10px}
+.topSection ul{margin-bottom:0}
+ul li{list-style-type:disc}
+.verticalContentContainer{display:none;visibility:hidden}
+p.headerSubH2Paragraph{padding-bottom:12px}
+h3{font-size:14px}
+h3.listHeader{padding-bottom:8px}
+h3.midParagraphHeader{padding-top:8px}
+h5{font-weight:bold}
+h1.option1{font:39px/50px Arial,sans-serif;color:#333;margin-bottom:21px}
+h1.option1a{font:39px/50px Arial,sans-serif;color:#96151d;margin-bottom:21px}
+h1.option1b{font:39px/50px Arial,sans-serif;color:#FFF;margin-bottom:21px}
+h1.option2{font:27px/32px Arial,sans-serif;color:#333;margin-bottom:16px}
+h1.option2a{font:27px/32px Arial,sans-serif;color:#FFF;margin-bottom:21px}
+h1.option2b,h2.option2b{font:27px/32px Arial,sans-serif;color:#96151d;margin-bottom:21px}
+h1.option3,h2.option3{font:21px/24px Arial,sans-serif;color:#333;margin-bottom:18px}
+h2#subOverviewHeader{margin-bottom:28px}
+h1.option3a,h2.option3a{font:21px/24px Arial,sans-serif;color:#96151d;margin-bottom:18px}
+h1.option3b{font:21px/24px Arial,sans-serif;color:#FFF;margin-bottom:18px}
+h2.option1{font:16px/18px Arial,sans-serif;color:#96151d;margin-bottom:15px}
+h2.option1a{font:16px/18px Arial,sans-serif;color:#333;margin-bottom:15px}
+h2.option1b{font:16px/18px Arial,sans-serif;color:#FFF;margin-bottom:15px}
+h2.option2{font:14px/16px Arial,sans-serif;color:#333;margin-bottom:12px}
+h2.option2a{font:14px/16px Arial,sans-serif;color:#96151d;margin-bottom:12px}
+.horizontalContentContainer{margin-top:28px}
+.horizontalContentContainer a:hover,.roundedCorners a:hover{text-decoration:none;border-bottom:1px solid #96151d}
+p{margin-bottom:10px}
+p.bottom{margin-bottom:0}
+p.midContentDisclaimer{font:12px/18px Arial,sans-serif;padding-top:40px}
+ul.midParagraphList{margin-bottom:0}
+.overviewSummary{color:#92131d;font-size:18px;line-height:26px;font-weight:normal;margin-bottom:33px;margin-right:12px;vertical-align:top}
+.twoColumnIconParagraphs{margin-bottom:20px;overflow:hidden;min-height:64px}
+.twoColumnIconParagraphs .iconParagraph{float:left;width:310px;margin-right:0}
+.twoColumnIconParagraphs .iconParagraphLeft{float:left;width:310px;margin-right:18px}
+.iconParagraph{margin-bottom:40px;min-height:64px}
+.iconParagraphBottom{margin-bottom:0;overflow:hidden;min-height:64px}
+.iconParagraphBottom .iconContent p.bottomPhoneParagraph{margin-bottom:0}
+.icon{width:64px;height:64px;margin-right:18px;float:left}
+.iconContent{margin-top:-4px;margin-left:82px}
+.iconContentCentered{margin-top:-4px;margin-left:82px;padding-top:26px}
+.iconContent h2.option1{font:18px/24px Arial,sans-serif;color:#96151d;margin-bottom:6px}
+.iconContent h2.option3{font:18px/24px Arial,sans-serif;color:#333;margin-bottom:6px}
+.iconContent h2.option3a{margin-bottom:8px}
+.iconContent h2.option4{font:21px/24px Arial,sans-serif;color:#333;margin-bottom:6px}
+.iconContent ul{font:14px/21px Arial,sans-serif;margin:0 0 0 16px}
+.iconContent p.listHeader{font-weight:bold;padding-top:8px}
+.linksBlock{padding:0;margin:0}
+.linksBlock a{display:inline-block;padding-top:12px}
+.linksBlock p{padding:12px 0 0 0;margin:0}
+.linksBlock p.first{padding:0;margin:0}
+.iconContent .paragraphBlock{margin:0 0 24px 0}
+.paragraphBlock{margin:0 0 40px 0}
+.paragraphBlockBottom{margin:0}
+.paragraphBlock h2,.paragraphBlockBottom h2,.iconContent .paragraphBlock h2{font:21px/24px Arial,sans-serif;color:#333;margin-bottom:10px}
+.linksBlock h3{font:14px Arial,sans-serif;font-weight:bold;color:#333;padding-top:12px}
+b.phoneNumber,b.phoneNumber a,strong.phoneNumber,strong.phoneNumber a{font-weight:bold;color:#333;display:inline}
+div.paragraphLink{padding:12px 0}
+li{list-style:disc;padding-bottom:9px}
+.lastParagraph{margin-bottom:33px}
+.findOut{font-size:14px}
+.hidden{display:none;visibility:hidden}
+.tanBox h4{font-size:16px;line-height:18px;font-weight:normal;margin:2px 0 16px 0}
+.tanBox{background-color:#efece3;padding:15px 20px 4px;font-size:12px;margin-bottom:13px;margin-top:21px;display:block;float:left}
+div.videoContainer{width:930px;padding:16px 18px}
+.needGuidance{font-size:16px;margin-bottom:14px}
+span.disclaimer{border:0;color:#666;font-size:11px}
+.disclaimerSection{border-top:1px solid #989898;color:#666;font-style:normal;padding-top:6px;float:left;font:14px/21px Arial,sans-serif;width:966px}
+.disclaimerSection p,.footnote,.disclosure,.prominentDisclosure{margin-bottom:18px;color:#666;font:14px/21px Arial,sans-serif}
+.disclaimerSection p.prominentDisclosure{font:14px/21px Arial,sans-serif;font-style:italic}
+.disclaimerSection p a{border-bottom:1px solid #8d4900}
+.disclaimerSection p a:hover{border-bottom:1px solid #96151d;text-decoration:none}
+.disclaimerSection em.phoneNumber a{color:#666;text-decoration:none;border-bottom:0}
+.disclaimerSection a.disclaimerPdfLink,.disclaimerSection a.disclaimerPdfLink:hover{text-decoration:none;border-bottom:0}
+.disclaimerSection a.disclaimerPdfLink em{border-bottom:1px solid #8d4900}
+.disclaimerSection a.disclaimerPdfLink img{vertical-align:text-top;padding-left:2px}
+div.videoContainer .leftCol{margin-right:82px;width:374px;display:block;float:left}
+div.videoContainer .rightCol{margin-right:64px;width:410px;display:block;float:left}
+a.videoLink,a.videoLink:hover,a.videoLink:active,a.videoLink:visited{text-decoration:underline;cursor:pointer;line-height:21px;color:#333;font-size:14px;padding-top:9px;font-style:normal}
+.videoInfo{font-size:11px;color:#656565;line-height:14px;margin-top:5px;width:40%;display:inline}
+.videoInfo a{font-size:14px}
+.videoThumbnail{width:146px;display:block;float:left;padding-right:4%;height:92px;cursor:pointer}
+.mcNabbTranscript{line-height:21px;font-size:14px;margin:10px 0}
+.mcNabbTranscript p{margin-bottom:17.5px}
+.layerContent table{width:692px}
+.layerContent{font-size:14px}
+.layerContent .paragraphBlock{width:639px}
+.layerContent .disclaimerSection.border{margin-left:10px;padding:6px 0 0 0;border-top:1px solid #989898}
+.layerContent .disclaimerSection{width:692px;padding:0 8px;border-top:0;margin-top:0}
+table.table-ng{border-collapse:collapse}
+table.table-ng tr th{width:242px;padding:10px 0 10px 18px;background-color:#efece3;font:12px/12px Arial,sans-serif}
+table.table-ng tr th.leftHeader{width:136px;padding:10px 0 10px 10px;font:14px/18px Arial,sans-serif;font-weight:bold!important;color:#92131d}
+table.table-ng tr th.boldHeader{width:136px;padding:10px 0 10px 10px;font:14px/18px Arial,sans-serif;font-weight:bold!important}
+table.table-ng tr td{width:242px;padding:10px 0 10px 18px;border-top:solid 1px #d9d9d9;font:12px/18px Arial,sans-serif}
+table.table-ng tr td.firstRow{border:0}
+table.table-ng tr td.leftTd{width:136px;padding:10px 0 10px 10px;font-weight:bold!important}
+table.table-ng2,table.table-ng3{border-collapse:collapse}
+table.table-ng2 tr th{width:228px;padding:10px 0;font:12px/12px Arial,sans-serif;border-bottom:solid 1px #d9d9d9}
+table.table-ng2 tr th.leftHeader{padding:10px 0;font:14px/18px Arial,sans-serif;font-weight:bold!important;color:#92131d}
+table.table-ng2 tr th.boldHeader{padding:10px 0;font:14px/18px Arial,sans-serif}
+table.table-ng2 tr td{width:242px;padding:10px 18px 10px 0;border-bottom:solid 1px #d9d9d9;font:12px/18px Arial,sans-serif}
+table.table-ng2 tr td.firstRow{border:0}
+table.table-ng2 tr td.leftCol{width:136px;font:14px/18px Arial,sans-serif;color:#92131d}
+table.table-ng3 tr th.boldHeader{padding:40px 0 12px 0;font:14px/18px Arial,sans-serif;font-weight:bold!important}
+table.table-ng3 tr th.leftHeader{padding:40px 0 12px 0;font:16px/18px Arial,sans-serif;font-weight:bold!important;color:#92131d}
+table.table-ng3 tbody tr.firstRow th{padding:22px 0 12px 0}
+table.table-ng3 tr th{width:228px;font:12px/12px Arial,sans-serif}
+table.table-ng3 tr td.leftCol{width:136px;font:12px/18px Arial,sans-serif;font-weight:bold!important}
+table.table-ng3 tr td{width:242px;padding:12px 18px 8px 0;border-bottom:solid 1px #d9d9d9;font:12px/18px Arial,sans-serif}
+table.table-ng3 tr th{border-bottom:solid 1px #d9d9d9}
+table.indexVsActiveTable{width:636px;margin-bottom:42px;border-collapse:collapse}
+.indexVsActiveTable th{font:14px Arial,sans-serif;padding:10px 18px 10px 6px;border-bottom:solid 1px #d9d9d9}
+.indexVsActiveTable td{font:14px/21px Arial,sans-serif;padding:10px 18px 10px 6px;border-bottom:solid 1px #d9d9d9}
+.indexVsActiveTable td.yAxisLabel{width:127px;font:14px Arial,sans-serif;color:#96151d}
+.layerContentClass h2{margin:0 0 0 16px}
+.layerContentClass table{margin:0 6px 18px 6px}
+.reference{color:#656565;text-transform:uppercase;line-height:21px;font-size:11px}
+p.quote{margin-bottom:0}
+.overviewBanner{margin:0 0 32px 0}
+.overviewSummaryWithSubParagraph{color:#92131d;font-size:18px;line-height:26px;font-weight:normal;vertical-align:top}
+.breadcrumbs{height:12px;padding:12px;background-color:#938775;color:#FFF;margin-bottom:18px;font:12px/12px arial,sans-serif;text-shadow:0 -1px #6c6151}
+.breadcrumbCarrot{padding:0 12px;height:8px;width:4px}
+span.returnToTop{color:#8d4900;cursor:pointer;padding-bottom:32px}
+span.returnToTop:hover{color:#96151d;text-decoration:underline}
+#hiddenFaqs,#hiddenContent,.hiddenDataDiv,.hidden,.navbarSelection{display:none;visibility:hidden}
+.nextGen.ui-dialog .ui-dialog-titlebar{height:0}
+.nextGen.ui-dialog .ui-dialog-titlebar-close{z-index:100}
+.layerDisclaimer{float:left;font:14px/21px Arial,sans-serif;color:#666;border-top:1px solid #999;padding-top:8px;width:100%}
+.layerDisclaimer a{border-bottom:1px solid #8d4900}
+.layerDisclaimer a:hover{text-decoration:none;border-bottom:1px solid #96151d}
+dl{margin-bottom:20px}
+dt{font-weight:bold;margin-top:20px}
+dt:first-child{margin-top:10px}
+dd{margin-left:16px}
+h3.firstQuestion{margin-top:0}
+h3.question{margin-top:40px}
+.extraMarginLink{margin-bottom:30px}
+.main sup{vertical-align:baseline;position:relative;top:-0.4em}
+.infoWrapper dl{margin-top:14px;margin-bottom:0}
+.infoWrapper dt{padding-left:5px;width:15px;float:left;margin-top:0}
+.infoWrapper dd{margin:0 0 0 20px;padding:0 0 9px 0}
+.infoWrapper dd.bottom{padding-bottom:1px}
+.errorMessage{padding:4px 6px 10px 4px;border-top:2px solid #f0ab00;margin:12px 0 18px 0;width:930px;display:block;background:#faf2bb url(/static/mutual-funds/images/circle_alert.png) no-repeat 7px 8px}
+.errorMessageImg{background:url(/static/mutual-funds/images/circle_alert.png) no-repeat}
+.errorMessage p{font-size:12px;color:#333;margin:5px 0 0 3px;padding-left:20px}
+.perfGrowthChart{margin-bottom:10px}
+.perfGrowthChart .chartText{position:absolute;font-size:.8em}
+.perfGrowthChart p{margin-bottom:2px;line-height:16px;padding-left:18px;position:relative}
+.perfGrowthChart .legendKey{position:absolute;left:0;height:16px;width:16px}
+.positionButton{float:left}
+.buttons{display:inline-block;float:right;margin-right:8px}
+.buttonTop{margin-top:-30px}
+.buttonBottom{margin-bottom:-15px}
+.buttonHidden{display:none}
+.fundsButton{padding:4px 8px 4px 8px;text-align:center;text-transform:uppercase;display:block;word-spacing:0;font-size:10px;color:#333;font-weight:bold;margin:0 8px 0 4px}
+a.fundsButton.grey{background:#d4cfc3;background:-moz-linear-gradient(top,#d4cfc3 0,#d4cfc3 48%,#ada394 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#d4cfc3),color-stop(48%,#d4cfc3),color-stop(100%,#ada394));background:-webkit-linear-gradient(top,#d4cfc3 0,#d4cfc3 48%,#ada394 100%);background:-o-linear-gradient(top,#d4cfc3 0,#d4cfc3 48%,#ada394 100%);background:-ms-linear-gradient(top,#d4cfc3 0,#d4cfc3 48%,#ada394 100%);background:linear-gradient(to bottom,#d4cfc3 0,#d4cfc3 48%,#ada394 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#D4CFC3',endColorstr='#ADA394',GradientType=0);border:1px solid #a79f93;color:#333}
+a.fundsButton.grey:active,a.fundsButton.grey:hover{color:#333;text-decoration:none!important;background:#ada394;background:-moz-linear-gradient(top,#ada394 0,#ada394 48%,#d4cfc3 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#ada394),color-stop(48%,#ada394),color-stop(100%,#d4cfc3));background:-webkit-linear-gradient(top,#ada394 0,#ada394 48%,#d4cfc3 100%);background:-o-linear-gradient(top,#ada394 0,#ada394 48%,#d4cfc3 100%);background:-ms-linear-gradient(top,#ada394 0,#ada394 48%,#d4cfc3 100%);background:linear-gradient(to bottom,#ada394 0,#ada394 48%,#d4cfc3 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ADA394',endColorstr='#D4CFC3',GradientType=0)}
+.main .bcrumbs p{font-size:12px;line-height:18px;padding:9px 9px 9px 12px;margin:0 0 18px 0;color:#fff;background-color:#948775}
+.main .bcrumbs a{color:#fff;text-decoration:none}
+@charset 'UTF-8';.number-neg{color:#f00!important}
+.number-positive{color:#360!important}
+table.chartTable{border-collapse:separate;border-spacing:5px}
+table.chartTable td{padding:3px}
+table.summarytable{border-collapse:collapse;border-spacing:5px;border:0;margin:0 0 18px 0;padding:0;width:100%}
+table.summarytable th{font:bold 80% Arial,sans-serif;padding:7px 9px;text-align:center;border-right:2px solid #FFF;border-top:0;border-bottom:0;background:#efece3;vertical-align:bottom}
+table.summarytable td{font:12px Arial,sans-serif;padding:6px 5px;border-collapse:collapse;border-bottom:solid 1px #d9d9d9;vertical-align:top;color:#333;overflow:visible}
+table.summarytable td.center{text-align:center}
+table.summarytable td.right,.text-right{text-align:right;padding-right:5px}
+table.summarytable td.feeRowHead{font:bold 80% Arial,sans-serif;text-align:right;vertical-align:top;border-top:0;border-bottom:0;width:25%}
+table.summarytable td.feeRowData{text-align:left;padding-left:15px;border-top:0;border-bottom:0}
+table.hoverboxLyr th{font-size:11px}
+table.hoverboxLyr td{width:210px}
+table.hoverboxLyr td.right{width:100px}
+table.fiftyTwoWeekHighLow{margin-top:15px}
+table.fiftyTwoWeekHighLow td{text-align:left;width:20%}
+table.summarytable.fiftyTwoWeekHighLow :first-child td{border-top:0}
+.hoverContent .fiftyTwoWeekHighLow:last-child{margin-bottom:15px}
+table.acctProfileTable td{width:180px}
+table.acctProfileTable td.right{width:250px}
+.dividendCapitalTable .type{width:20%}
+.dividendCapitalTable .distDate{width:12%}
+.dividendCapitalTable .price{width:8%}
+.dividendCapitalTable .sec{width:15%}
+.secFootnoteHeader{font:21px/24px Arial,sans-serif;color:#333;margin-bottom:18px}
+img.textBottom{vertical-align:text-bottom}
+span.note{color:#333;background-color:transparent;font-style:normal;font-variant:normal;font-weight:normal;font-size:65%;line-height:normal;font-size-adjust:none;font-stretch:normal;-moz-font-feature-settings:normal;-moz-font-language-override:normal;margin:0 0 1em;font-family:Verdana,sans-serif!important}
+span.note.loadOrNTFNote{font-size:12px}
+ul.linkBar{margin-left:0}
+.linkBar li{display:inline;list-style:none;padding-left:9px;padding-right:9px}
+.linkBar span{font-weight:bold}
+.profilePageContainer h1{font:21px/24px Arial,sans-serif;color:#96151d;margin-bottom:.3em;clear:left}
+.fundNameHeader{width:545px}
+.profilePageContainer h2{margin-top:15px;margin-bottom:8px;font:21px/24px Arial,sans-serif;color:#333;clear:left}
+.profilePageContainer h3{font-weight:bold!important;font:85% Arial,sans-serif;margin-top:0;margin-bottom:3px}
+.profilePageContainer h4{font-weight:normal!important;font:85% Arial,sans-serif;margin-top:0;margin-bottom:3px;color:#333}
+.fullBlock{clear:both;width:922px}
+.fullBlock .halfBlockRight{margin-right:0}
+.halfBlock{float:left;width:48%;margin-right:18px}
+.halfBlockRight{float:right;width:48%;margin-right:18px}
+p.halfBlock,p.halfBlockRight{margin-top:15px;margin-bottom:27px}
+.profilePageContainer{width:942px;background-color:white;margin-bottom:0}
+p{font:12px/18px Arial,sans-serif;margin-bottom:15px}
+.strategyAndpolicy div,.strategyAndpolicy span,.strategyAndpolicy ul li{font:12px/18px Arial,sans-serif}
+li{padding-bottom:0}
+.plainTalkContent ul{margin-top:10px;margin-right:0;margin-bottom:0;margin-left:5px}
+.footnote{line-height:normal;font-style:normal;font-variant:normal;font-weight:normal;margin-top:2px;margin-right:0;margin-bottom:15px;margin-left:0;font-size:10px;color:#333;font-family:Verdana,sans-serif}
+.disclaimers{border-top:solid 1px #d9d9d9;border-bottom:solid 1px #d9d9d9;padding:4px;margin-bottom:15px}
+.disclaimers p{font-family:Verdana,sans-serif;font-style:italic;color:#333;margin:10px 0 0 0}
+.disclaimers p:first-child{margin-top:0}
+.innerContentPanel900{width:100%;padding:8px 38px 0 14px}
+.internal{background:#d3e0c5!important}
+.dailyRate{float:left;width:100%;height:100%;background-color:white;margin-bottom:1px}
+.dailyRateHeader{color:#333;font-weight:bold!important;font:85% Arial,sans-serif;background:#d3e0c5;padding-top:5px;padding-right:2px;padding-bottom:1px;padding-left:8px;display:inline;float:left}
+.dailyRateTable .date{width:70%;text-align:left}
+.dailyRateTable .rateHead{width:30%;text-align:left}
+.dailyRateTable .rate{width:30%;text-align:right}
+table.internal{border:3px solid #bbcf9d;background-color:transparent!important}
+td.riskLinkPaddingTop{padding-top:18px}
+table.summarytable td.bold{font:bold 80% Arial,sans-serif}
+table.summarytable td.subHead{font:bold 80% Arial,sans-serif;text-align:left;padding-left:5px}
+table.summarytable td.total{font:bold 80% Arial,sans-serif;text-align:right;padding-right:5px}
+table.summarytable tr:first-child td{border-top:solid 1px #d9d9d9}
+table.summarytable.fundFact tr:first-child td{width:200px}
+table.summarytable td.noBorderTopBottom{border-top:0;border-bottom:0}
+table.summarytable .bigSmallSmallCol1{width:40%}
+table.summarytable .bigSmallSmallCol2{width:30%}
+table.summarytable .bigSmallSmallCol3{width:30%}
+table.summarytable .littleWidth{width:8%}
+table.summarytable .middleWidth{width:24%}
+table.gridTable{margin-bottom:7px;padding:0;border-collapse:separate;border-spacing:2px;border-color:gray}
+table.gridtable td.portfoliostyle{width:19%;padding-right:7px;vertical-align:top}
+table.gridtable td.portfoliostylecontent{width:47%;padding-right:7px;padding-left:7px;vertical-align:top}
+table.gridtable td.portfoliostyleEmpty{width:34%;padding-left:7px;vertical-align:top}
+ul.addAFundOrEtfDropList{margin:0;position:absolute;margin-top:-11px;background-color:white;border:1px #bbb solid}
+ul.addAFundOrEtfDropList li{list-style-type:none}
+ul.addAFundOrEtfDropList a{padding:5px;display:block}
+ul.addAFundOrEtfDropList a:hover{color:white;background-color:#96151d;text-decoration:none}
+ul.addAFundOrEtfDropList span{margin-right:10px}
+.placeholder{color:#aaa}
+.colL{float:left;width:153px;height:120px;border-right:dotted 1px #996;padding-right:7px}
+.colM{float:left;width:616px;height:120px;padding:0 14px}
+.colR{float:right;width:153px;height:120px;border-left:dotted 1px #996;padding-left:7px}
+.bannerArrow{display:inline;color:#fff;background:#8d4900;font:bold 90% Verdana,sans-serif;padding:0 2px;margin-left:2px;text-decoration:none}
+.msciImageSize{height:32px;width:48px}
+.clearDivFloat{clear:both}
+.ExpRatiolayerImage{height:12px;border:0;width:66px}
+.container{display:inline-block}
+.printIcon{display:inline-block;float:right;margin-right:42px;padding-top:2px}
+.topRightIcon{height:22px;width:22px}
+.moneyMarketSecLink{font:bold 85% Arial,sans-serif;margin-bottom:15px}
+.imgLgVal,.imgLgBld,.imgLgGrw,.imgMedVal,.imgMedBld,.imgMedGrw,.imgSmVal,.imgSmBld,.imgSmGrw,.imgTrsySh,.imgTrsyMed,.imgTrsyLng,.imgInvGrdSh,.imgInvGrdMed,.imgInvGrdLng,.imgLowGrdSh,.imgLowGrdMed,.imgLowGrdLng{background-image:url(../../images/ninebox.png);background-repeat:no-repeat;font-size:0;display:inline-block;display:-moz-inline-box;height:122px;width:160px;margin:5px}
+.imgLgVal{background-position:-11px -10px}
+.imgLgBld{background-position:-186px -10px}
+.imgLgGrw{background-position:-361px -10px}
+.imgMedVal{background-position:-11px -150px}
+.imgMedBld{background-position:-186px -150px}
+.imgMedGrw{background-position:-361px -150px}
+.imgSmVal{background-position:-11px -290px}
+.imgSmBld{background-position:-186px -290px}
+.imgSmGrw{background-position:-361px -290px}
+.imgTrsySh{background-position:-3px -430px}
+.imgTrsyMed{background-position:-178px -430px}
+.imgTrsyLng{background-position:-353px -430px}
+.imgInvGrdSh{background-position:-3px -570px}
+.imgInvGrdMed{background-position:-178px -570px}
+.imgInvGrdLng{background-position:-353px -570px}
+.imgLowGrdSh{background-position:-3px -710px}
+.imgLowGrdMed{background-position:-178px -710px}
+.imgLowGrdLng{background-position:-353px -710px}
+.closedFund{color:#c00}
+.regionAllocation{margin-bottom:15px}
+.videoTitle{font-size:28px;font-weight:normal;color:#333;line-height:30px}
+.fundVideoImage img{margin:20px 0 20px 0}
+.readTranscript{margin-bottom:0}
+.vanguardNewsReviews .imageLink{color:#8d4900;border-bottom:0;text-decoration:none}
+.vanguardNewsReviews .imageLink:hover{text-decoration:none;border:0}
+.newsReviews{width:942px;margin-top:20px;display:inline-block}
+.newsReviews h2{font-size:19px;font-weight:normal;line-height:20px;color:#333;margin-bottom:8px}
+.newsReviews p{font-size:12px;line-height:18px;color:#333}
+.vanguardFundNews table{width:461px;display:inline-block;border-spacing:0;border-collapse:collapse;empty-cells:show}
+.vanguardFundNews tr{display:inline-block}
+.archiveSubscribe{width:942px;display:inline-block}
+.archiveSubscribe .inline{display:inline}
+.archiveSubscribe .rssFeed{vertical-align:bottom;cursor:pointer;border:0;text-decoration:none;height:15px;width:30px}
+.archiveSubscribe .rssFeed:hover{border:0;text-decoration:none}
+.archiveSubscribe p{font-size:12px;font-weight:bold}
+.newsSection{width:461px;float:left}
+.reviewsSection{width:481px;float:left}
+.reviewsSection ul{list-style-type:disc;color:#333}
+.reviewsSection li{margin:0;padding:0}
+.reviewsSection .note{font-family:Verdana,sans-serif;font-size:10px;line-height:normal}

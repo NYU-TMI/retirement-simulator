@@ -1,0 +1,316 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.cond8-hide {
+  display: none;
+}
+
+.cond8-show {
+  display: none;
+}
+
+#twitterLogo {
+  width: 20px;
+  height: 20px;
+  float: right;
+}
+
+ul#twitterStat1 {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #888;
+  font-size: 11px;
+  list-style: none;
+  width: 100%;
+  border-radius: 3px;
+}
+
+ul#twitterStat2 {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #888;
+  font-size: 11px;
+  list-style: none;
+  width: 100%;
+  border-radius: 3px;
+}
+
+ul#twitterStat3 {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #888;
+  font-size: 11px;
+  list-style: none;
+  width: 100%;
+  border-radius: 3px;
+}
+
+li {
+  margin-bottom: 1em;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+#twitterStat a {
+  color: #888;
+}
+
+strong {
+  color: #000;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+path.slice{
+	stroke-width:2px;
+}
+
+polyline{
+	opacity: .3;
+	stroke: black;
+	stroke-width: 2px;
+	fill: none;
+}
+
+text {
+  font-size: 10px;
+  background: #fff !important;
+}
+
+#balanceChart svg {
+  height: 200px;
+  width: 360px;
+}
+
+.outcome {
+  float: left;
+  padding: 10px;
+  width: 33%;
+  position: relative;
+  text-align: center;
+}
+
+.outcome.primary {
+  width: 100%;
+}
+
+.outcome-line {
+  width: 90px;
+  height: 90px;
+  border-right: 1px solid #222;
+  position: relative;
+}
+
+.outcome-line.left {
+  -webkit-transform: rotate(45deg);
+  top: -51px;
+  left: 20px;
+  margin-bottom: -20px;
+}
+
+.outcome-line.center {
+  -webkit-transform: rotate(0);
+  height: 70px;
+  top: -8px;
+  left: -24px;
+}
+
+.outcome-line.right {
+  -webkit-transform: rotate(-45deg);
+  top: 12px;
+  left: -40px;
+  margin-bottom: -20px;
+}
+
+.outcome .desc {
+  font-size: 14px;
+}
+
+.outcome .future-val {
+  font-size: 36px;
+  font-weight: normal;
+  font-weight: bold;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.clear {
+  clear: both;
+}
+
+.hidden {
+  display: none;
+}
+
+.save {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.no-marg {
+  margin: 0;
+}
+
+.desc {
+
+}
+
+.weights label {
+  min-width: 160px;
+}
+
+.retirement-saving {
+  border-left: 1px solid #ccc;
+}
+
+.retirement-goal {
+  border-left: 1px solid #ccc;
+}
+
+.goals label {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+input[disabled] {
+  opacity: .25;
+}
+
+.hide {
+  display: none;
+}
+
+.amount {
+  width: 200px;
+  float: left;
+}
+
+input[type=text] {
+  font-size: 24px;
+  border: 1px solid #ccc;
+  width: 150px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+input[type=text].std-fld {
+  width: auto;
+  text-align: left;
+}
+
+input[type=radio] {
+  margin-right: 5px;
+}
+
+.endowment-value {
+  font-size: 36px;
+}
+
+#pageData {
+  margin-bottom: 40px;
+}
+
+.num-group {
+  text-align: center;
+}
+
+.marg {
+  margin: 20px 0;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+hr {
+  margin: 20px 0;
+}
+
+input[type=text].final-goal {
+  font-size: 48px;
+  width: 320px;
+}
+
+#completeMsg {
+  display: none;
+}
+
+#returnMsg {
+  display: none;
+}
+
+input[disabled] {
+  background: none;
+  opacity: .5;
+  border: none;
+}
+
+.info {
+  width: 16px;
+  height: 16px;
+  background-image: url(../img/help-icon.svg);
+  background-size: 16px;
+  display: inline-block;
+}
+
+strong {
+  color: darkred;
+}
+
+.previous-percent {
+  font-size: 10px;
+  display: none;
+}
+
+.no-width {
+  width: auto;
+}
+
+#displaySum {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+#submitBtn {
+  margin: 0 10px;
+}

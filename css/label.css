@@ -1,0 +1,192 @@
+.open-modal {
+  overflow: hidden;
+}
+
+.container.label-wrap {
+  width: 900px;
+}
+
+.bg-lightblue {
+  background-color: lightblue;
+}
+
+.nav-tabs {
+  padding-top: 20px;
+}
+
+.modal-header {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.modal-body {
+  padding-top: 0;
+}
+
+.label-width {
+  width: 1100px;
+}
+
+.label-table {
+  table-layout: fixed;
+  margin-bottom: 5px;
+}
+
+.label-table td, .label-table th {
+  border-top: none !important;
+}
+
+.label-table th {
+  font-size: 16px;
+}
+
+#hist-label th, #hist-label td, #estimates-label th, #estimates-label td, #fees-label th, #fees-label td {
+  padding: 5px;
+}
+
+.label-input {
+  border: 1.5px solid red;
+  padding: 5px;
+  font-size: 20px;
+}
+
+#label-timeframe {
+  width: 50px;
+  margin: 10px;
+  text-align: center;
+}
+
+#label-invest {
+  width: 110px;
+  margin: 10px 38px 10px 10px;
+  text-align: right;
+}
+
+.pct-display {
+  width: 110px;
+  height: 60px;
+  border: 1.5px solid red;
+  margin: 10px 0 0 10px;
+  padding-right: 5px;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.volatility-pct-display {
+  position: relative;
+}
+
+.pct-display-after {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.label-input[readonly], .pct-display[readonly] {
+  border: none;
+}
+
+.plus-minus {
+  font-size: 15px;
+  position: absolute;
+  top: 9%;
+  left: 25%;
+}
+
+.pct-desc {
+  margin-right: 10px;
+  text-align: right;
+  white-space: nowrap;
+  margin-bottom: 5px;
+}
+
+.tooltip-inner {
+  max-width: 200px;
+  width: 200px;
+  padding: 5px;
+  text-align: center;
+  white-space: normal;
+}
+
+.normal-top {
+  border-top: 2px solid black;
+}
+
+.thin-top {
+  border-top: 1px solid black;
+}
+
+.thick-top {
+  border-top: 5px solid black;
+}
+
+.right-divider {
+  margin-right: -20px;
+  border-right: 1px solid black;
+}
+
+.small-top-pad {
+  padding-top: 10px;
+}
+
+.small-bottom-pad {
+  padding-bottom: 10px;
+}
+
+.med-top-pad {
+  padding-top: 25px;
+}
+
+.label-title {
+  font-weight: bold;
+}
+
+.label-option {
+  text-align: center;
+}
+
+.label-option-card {
+  color: white;
+  font-size: 14px;
+  width: 40px;
+}
+
+.label-option-card > p {
+  font-size: 24px;
+  margin: 0;
+  text-align: center;
+}
+
+.label-option-details {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.label-inner-option {
+  background-color: silver;
+  display: inline-block;
+}
+
+.ratings-risk {
+  width: 360px;
+}
+
+.recommend-icon, .reject-icon {
+  font-size: 160px;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.recommend-text {
+  margin-top: 75px;
+  text-align: right;  
+}
+
+#label-recommend-head {
+  margin-bottom: 5px;
+}
+
+.label-experiment {
+  float: right;
+  margin-bottom: 10px;
+}
